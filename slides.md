@@ -1,16 +1,13 @@
 ---
 # You can also start simply with 'default'
 theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
 background: ./images/margarida-afonso-ahMCpXdUjv0-unsplash.jpg
 # some information about your slides (markdown enabled)
-title: Welcome to Slidev
+title: Software as Craft(ing)
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
+  ## Software as Craft(ing)
+  A talk about writing software as a craft project.
 
-  Learn more at [Sli.dev](https://sli.dev)
 # apply unocss classes to the current slide
 class: text-center
 # https://sli.dev/features/drawing
@@ -30,8 +27,122 @@ mdc: true
 <div class="absolute bottom-4 right-4">
 Photo by <a href="https://unsplash.com/@mrafonso1976?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Margarida Afonso</a> on <a href="https://unsplash.com/photos/orange-blue-and-white-yarn-ahMCpXdUjv0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 </div>
-
 ---
+
+<div class="relative w-full h-96">
+  <!-- Painting - starts large, shrinks to top-left corner -->
+  <div
+    v-motion
+    :initial="{ scale: 1, x: 0, y: 0, opacity: 1 }"
+    :click-1="{ scale: 0.3, x: -300, y: -200, opacity: 0.8, transition: { duration: 800, ease: 'easeInOut' } }"
+    class="absolute inset-0 w-full h-full"
+  >
+    <div class="absolute inset-0 flex items-center justify-center z-10">
+      <div class="text-2xl font-bold pb-8 drop-shadow-lg">Painting</div>
+    </div>
+    <img
+      class="w-full h-full object-cover rounded-lg shadow-lg"
+      src="./images/victoria-berman-U-ouhtPgHH4-unsplash.jpg"
+      alt="Painting"
+    />
+    <div class="absolute bottom-4 left-4 text-xs">
+    Photo by <a href="https://unsplash.com/@vicbils?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Victoria Berman</a> on <a href="https://unsplash.com/photos/red-petaled-flower-painting-U-ouhtPgHH4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    </div>
+  </div>
+
+  <!-- Cooking - appears after first click, shrinks to top-right corner -->
+  <div
+    v-motion
+    :initial="{ scale: 0, x: 0, y: 0, opacity: 0 }"
+    :click-1="{ scale: 1, x: 0, y: 0, opacity: 1, transition: { duration: 800, ease: 'easeInOut' } }"
+    :click-2="{ scale: 0.3, x: 300, y: -200, opacity: 0.8, transition: { duration: 800, ease: 'easeInOut' } }"
+    class="absolute inset-0 w-full h-full"
+  >
+    <div class="absolute inset-0 flex items-center justify-center z-10">
+      <div class="text-2xl font-bold text-white drop-shadow-lg">Cooking</div>
+    </div>
+    <img
+      class="w-full h-full object-cover rounded-lg shadow-lg"
+      src="./images/sincerely-media-R-J5t4aHj3I-unsplash.jpg"
+      alt="Cooking"
+    />
+    <div class="absolute bottom-4 right-4 text-white text-xs">
+    Photo by <a href="https://unsplash.com/@sincerelymedia?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Sincerely Media</a> on <a href="https://unsplash.com/photos/person-holding-clear-glass-bowl-with-brown-liquid-R-J5t4aHj3I?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    </div>
+  </div>
+
+  <!-- Ceramics - appears after second click, shrinks to bottom-left corner -->
+  <div
+    v-motion
+    :initial="{ scale: 0, x: 0, y: 0, opacity: 0 }"
+    :click-2="{ scale: 1, x: 0, y: 0, opacity: 1, transition: { duration: 800, ease: 'easeInOut' } }"
+    :click-3="{ scale: 0.3, x: -300, y: 200, opacity: 0.8, transition: { duration: 800, ease: 'easeInOut' } }"
+    :click-4="{ scale: 0.2, x: -350, y: 250, opacity: 0.6, transition: { duration: 800, ease: 'easeInOut' } }"
+    class="absolute inset-0 w-full h-full"
+  >
+    <div class="absolute inset-0 flex items-center justify-center z-10">
+      <div class="text-2xl font-bold text-white drop-shadow-lg">Ceramics</div>
+    </div>
+    <img
+      class="w-full h-full object-cover rounded-lg shadow-lg"
+      src="./images/taylor-heery-RB9YcXSAv2g-unsplash.jpg"
+      alt="Ceramics"
+    />
+    <div class="absolute bottom-4 right-4 text-white text-xs">
+    Photo by <a href="https://unsplash.com/@taylorheeryphoto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Taylor Heery</a> on <a href="https://unsplash.com/photos/person-making-clay-pot-on-the-floor-RB9YcXSAv2g?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    </div>
+  </div>
+
+  <!-- Poetry - appears after third click, shrinks to bottom-right corner -->
+  <div
+    v-motion
+    :initial="{ scale: 0, x: 0, y: 0, opacity: 0 }"
+    :click-3="{ scale: 1, x: 0, y: 0, opacity: 1, transition: { duration: 800, ease: 'easeInOut' } }"
+    :click-4="{ scale: 0.3, x: 300, y: 200, opacity: 0.8, transition: { duration: 800, ease: 'easeInOut' } }"
+    class="absolute inset-0 w-full h-full"
+  >
+    <div class="absolute inset-0 flex items-center justify-center z-10 pb-8">
+      <div class="text-2xl font-bold text-white drop-shadow-lg">Poetry</div>
+    </div>
+    <img
+      class="w-full h-full object-cover rounded-lg shadow-lg"
+      src="./images/jules-a-NvFkYV2ngOk-unsplash.jpg"
+      alt="Poetry"
+    />
+    <div class="absolute bottom-4 left-4 text-white text-xs">
+    Photo by <a href="https://unsplash.com/@julesea?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">jules a.</a> on <a href="https://unsplash.com/photos/grayscale-photography-of-brother-typewriter-NvFkYV2ngOk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    </div>
+  </div>
+
+  <!-- Coding - appears after fourth click, stays large -->
+  <div
+    v-motion
+    :initial="{ scale: 0, x: 0, y: 0, opacity: 0 }"
+    :click-4="{ scale: 1, x: 0, y: 0, opacity: 1, transition: { duration: 800, ease: 'easeInOut' } }"
+    class="absolute inset-0 w-full h-full"
+  >
+    <div class="absolute inset-0 flex items-center justify-center z-10">
+      <div class="text-2xl font-bold text-white drop-shadow-lg">Coding?</div>
+    </div>
+    <img
+      class="w-full h-full object-cover rounded-lg shadow-lg"
+      src="./images/ilya-pavlov-OqtafYT5kTw-unsplash.jpg"
+      alt="Coding"
+    />
+    <div class="absolute bottom-4 right-4 text-white text-xs">
+    Photo by <a href="https://unsplash.com/@ilyapavlov?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ilya Pavlov</a> on <a href="https://unsplash.com/photos/monitor-showing-java-programming-OqtafYT5kTw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="mt-8 text-center" style="display: none;">
+  <div v-click class="text-lg font-semibold">Painting</div>
+  <div v-click class="text-lg font-semibold">Cooking</div>
+  <div v-click class="text-lg font-semibold">Ceramics</div>
+  <div v-click class="text-lg font-semibold">Poetry</div>
+  <div v-click class="text-xl font-bold text-blue-600">Coding?</div>
+</div>
 
 <!--
 I write software for my job, and I also enjoy writing code! In the same way people might write poetry, paint, cook, throw ceramics, or any other creative pursuit, it can be fun. Many people are skeptical that it could be fun, so I want to convince you that it can be.
@@ -614,6 +725,46 @@ square: 0,-5,0,0
 
 ---
 
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
 # Draggable Elements
 
 Double-click on the draggable elements to edit their positions.
@@ -686,8 +837,8 @@ console.log(`vue ${version}`);
 console.log(
   emptyArray<number>(10).reduce(
     (fib) => [...fib, fib.at(-1)! + fib.at(-2)!],
-    [1, 1],
-  ),
+    [1, 1]
+  )
 );
 ```
 
