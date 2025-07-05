@@ -24,7 +24,7 @@ mdc: true
 
 # Software as Craft(ing)
 
-<div class="absolute bottom-4 right-4">
+<div class="absolute bottom-4 right-4 text-xs">
 Photo by <a href="https://unsplash.com/@mrafonso1976?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Margarida Afonso</a> on <a href="https://unsplash.com/photos/orange-blue-and-white-yarn-ahMCpXdUjv0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 </div>
 ---
@@ -137,7 +137,7 @@ Photo by <a href="https://unsplash.com/@mrafonso1976?utm_content=creditCopyText&
 </div>
 
 <div class="mt-8 text-center" style="display: none;">
-  <div v-click class="text-lg font-semibold">Painting</div>
+  <div class="text-lg font-semibold">Painting</div>
   <div v-click class="text-lg font-semibold">Cooking</div>
   <div v-click class="text-lg font-semibold">Ceramics</div>
   <div v-click class="text-lg font-semibold">Poetry</div>
@@ -150,20 +150,83 @@ I write software for my job, and I also enjoy writing code! In the same way peop
 
 ---
 
-Some projects that I've worked on for fun.
+# Some projects that I've worked on for fun
 
-1.  residency scheduling: assign residents to medical rotations while meeting curriculum constraints and vacation requests.
-2.  sync or swim: slice up audiobooks and load them onto aftershokz swim headphones
-3.  personal shopper: better interface for Fred Meyer pickup orders
-4.  ppre: "planned pattern of regular eating" app
+<div class="text-center text-lg">
+  Let me show you a few examples...
+</div>
 
-There are others, but they're navel-gazy. Coding is odd in that the tools you use to do coding are made out of code. So some projects are things that only make sense once you've been coding for a while.
+---
 
-Here are some examples from around the web:
+# Residency Scheduling
 
-1. [dot counter](https://calvin.sh/tools/dot-counter/): count things in an image by clicking on them.
-2. [BoopSnoop](https://www.robinsloan.com/notes/home-cooked-app/): video messaging app, just for Robin Sloan's family
-3.
+<div class="flex items-center justify-center h-80 mb-8">
+  <img src="./images/residency-schedule.png" alt="Residency Schedule" class="max-h-full max-w-full rounded-lg shadow-xl" />
+</div>
+
+<div class="text-center">
+  <p class="text-lg">Assign residents to medical rotations while meeting curriculum constraints and vacation requests.</p>
+</div>
+
+---
+
+# Sync or Swim
+
+<div class="flex items-center justify-center h-80 mb-8">
+  <img src="./images/load-music.png" alt="Load Music" class="max-h-full max-w-full rounded-lg shadow-xl" />
+</div>
+
+<div class="text-center">
+  <p class="text-lg">Slice up audiobooks and load them onto Aftershokz swim headphones.</p>
+</div>
+
+---
+
+# Personal Shopper
+
+<div class="flex items-center justify-center h-80 mb-8">
+  <img src="./images/personal-shopper.excalidraw.png" alt="Personal Shopper" class="max-h-full max-w-full rounded-lg shadow-xl" />
+</div>
+
+<div class="text-center">
+  <p class="text-lg">Better interface for Fred Meyer pickup orders.</p>
+</div>
+
+---
+
+# PPRE
+
+<div class="flex items-center justify-center h-80 mb-8">
+  <img src="./images/ppre.png" alt="PPRE App" class="max-h-full max-w-full rounded-lg shadow-xl" />
+</div>
+
+<div class="text-center">
+  <p class="text-lg">"Planned Pattern of Regular Eating" app.</p>
+</div>
+
+---
+
+# Other Examples from Around the Web
+
+<div class="space-y-6">
+  <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+    <h3 class="text-xl font-semibold mb-2">
+      <a href="https://calvin.sh/tools/dot-counter/" class="text-blue-300 hover:text-blue-200 underline">dot counter</a>
+    </h3>
+    <p class="text-lg">Count things in an image by clicking on them.</p>
+  </div>
+
+  <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+    <h3 class="text-xl font-semibold mb-2">
+      <a href="https://www.robinsloan.com/notes/home-cooked-app/" class="text-blue-300 hover:text-blue-200 underline">BoopSnoop</a>
+    </h3>
+    <p class="text-lg">Video messaging app, just for Robin Sloan's family.</p>
+  </div>
+</div>
+
+<div class="mt-8 text-sm opacity-80">
+  There are others, but they're navel-gazy. Coding is odd in that the tools you use to do coding are made out of code. So some projects are things that only make sense once you've been coding for a while.
+</div>
 
 ---
 
@@ -712,6 +775,16 @@ Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML D
 foo: bar
 dragPos:
 square: 691,32,167,\_,-16
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
 
 ---
 
