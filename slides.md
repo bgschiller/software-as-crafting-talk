@@ -160,36 +160,116 @@ I write software for my job, and I also enjoy writing code! In the same way peop
 
 # Residency Scheduling
 
-<div class="flex items-center justify-center h-80 mb-8">
-  <img src="./images/residency-schedule.png" alt="Residency Schedule" class="max-h-full max-w-full rounded-lg shadow-xl" />
+<div class="relative h-80 mb-8">
+  <!-- Photo - shows initially -->
+  <div class="absolute inset-0 flex items-center justify-center" v-if="$clicks === 0">
+    <img src="./images/residency-schedule.png" alt="Residency Schedule" class="max-h-full max-w-full rounded-lg shadow-xl" />
+  </div>
+
+  <!-- First code block - shows on first click -->
+  <div v-if="$clicks === 1" class="absolute inset-0">
+
+```python
+# curriculum constraints
+for resident in RESIDENTS:
+    model.addConstraint(
+        sum(x[month, 'FMS', resident] for month in MONTHS) == 3,
+        '{} must do 3 months of FMS'.format(resident))
+    model.addConstraint(
+        (
+            sum(x[month, 'Inpatient Peds CHCO', resident] for month in MONTHS) +
+            sum(x[month, 'Inpatient Peds DH', resident] for month in MONTHS)
+        ) == 1,
+        '{} must do 1 month of Inpatient Peds'.format(resident))
+    # ...
+```
+
+  </div>
+
+  <div v-if="$clicks === 2" class="absolute inset-0">
+
+```python
+# schedule constraints
+chco_peds_numbers = {
+    'Jul': 2, 'Aug': 1, 'Sep': 1,
+    'Oct': 1, 'Dec': 1,
+}
+for month in MONTHS:
+    chco_num = chco_peds_numbers.get(month, 0)
+    model.addConstraint(
+        sum(x[month, 'Inpatient Peds CHCO', resident]
+            for resident in RESIDENTS) == chco_num,
+        '{} residents doing CHCO Peds {}'.format(chco_num, month))
+```
+
+  </div>
+
+  <!-- Second code block - shows on second click -->
+  <div v-if="$clicks === 3" class="absolute inset-0">
+
+```python
+# resident goals
+"""
+John's Goal
+
+1. ICU and OB early
+2. An elective over winter at some point
+"""
+john_objective = (
+1/3 * as_early_as_possible('John', 'MICU-DH') +
+1/3 * as_early_as_possible('John', 'MICU-UH') +
+1/3 * as_early_as_possible('John', 'OB-UH') +
+1/3 * avg([x[month, 'Elective', 'John'] for month in ('Dec', 'Jan', 'Feb')])
+)
+resident_objective.append(john_objective)
+```
+
+  </div>
 </div>
 
-<div class="text-center">
-  <p class="text-lg">Assign residents to medical rotations while meeting curriculum constraints and vacation requests.</p>
+<div style="display: none;">
+  <span v-click="1">1</span>
+  <span v-click="2">2</span>
+  <span v-click="3">3</span>
 </div>
 
 ---
 
-# Sync or Swim
+# Sync and Swim
 
-<div class="flex items-center justify-center h-80 mb-8">
-  <img src="./images/load-music.png" alt="Load Music" class="max-h-full max-w-full rounded-lg shadow-xl" />
+<div v-if="$clicks === 0">
+<div class="flex items-center justify-center h-96 mb-8">
+  <img src="./images/sync-and-swim-main.png" alt="main screen" class="max-h-full max-w-full" />
+</div>
+
+<div class="text-center">
+  <p class="text-lg">Sync and Swim is an app with utilities for listening to audiobooks while swimming.</p>
+</div>
+</div>
+
+<div v-if="$clicks === 1">
+<div class="flex items-center justify-center h-96 mb-8">
+  <img src="./images/load-music.png" alt="Load Music" class="max-h-full max-w-full" />
 </div>
 
 <div class="text-center">
   <p class="text-lg">Slice up audiobooks and load them onto Aftershokz swim headphones.</p>
 </div>
+</div>
 
----
-
-# Personal Shopper
-
-<div class="flex items-center justify-center h-80 mb-8">
-  <img src="./images/personal-shopper.excalidraw.png" alt="Personal Shopper" class="max-h-full max-w-full rounded-lg shadow-xl" />
+<div v-if="$clicks === 2">
+<div class="flex items-center justify-center h-96 mb-8">
+  <img src="./images/find-your-place.png" alt="Find Your Place" class="max-h-full max-w-full" />
 </div>
 
 <div class="text-center">
-  <p class="text-lg">Better interface for Fred Meyer pickup orders.</p>
+  <p class="text-lg">Find your place in an audiobook (sometimes it turns on in your gym bag).</p>
+</div>
+</div>
+
+<div style="display: none;">
+  <span v-click="1">1</span>
+  <span v-click="2">2</span>
 </div>
 
 ---
@@ -202,6 +282,18 @@ I write software for my job, and I also enjoy writing code! In the same way peop
 
 <div class="text-center">
   <p class="text-lg">"Planned Pattern of Regular Eating" app.</p>
+</div>
+
+---
+
+# Personal Shopper
+
+<div class="flex items-center justify-center h-80 mb-8">
+  <img src="./images/personal-shopper.excalidraw.png" alt="Personal Shopper" class="max-h-full max-w-full rounded-lg shadow-xl" />
+</div>
+
+<div class="text-center">
+  <p class="text-lg">Better interface for Fred Meyer pickup orders.</p>
 </div>
 
 ---
@@ -838,6 +930,69 @@ square: 0,-5,0,0
 
 ---
 
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+
+dragPos:
+square: 0,-5,0,0
+
+---
+dragPos:
+  square: 0,-5,0,0
+---
+
 # Draggable Elements
 
 Double-click on the draggable elements to edit their positions.
@@ -883,6 +1038,7 @@ src: ./pages/imported-slides.md
 hide: false
 
 ---
+
 
 ---
 
