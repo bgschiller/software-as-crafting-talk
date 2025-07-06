@@ -300,24 +300,12 @@ resident_objective.append(john_objective)
 
 # Other Examples from Around the Web
 
-<div class="space-y-6">
-  <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-    <h3 class="text-xl font-semibold mb-2">
-      <a href="https://calvin.sh/tools/dot-counter/" class="text-blue-300 hover:text-blue-200 underline">dot counter</a>
-    </h3>
-    <p class="text-lg">Count things in an image by clicking on them.</p>
-  </div>
+<iframe v-if="$clicks === 0" src="https://calvin.sh/tools/dot-counter/" class="w-full h-96 rounded-lg shadow-xl"></iframe>
+<iframe v-if="$clicks === 1" src="https://neal.fun/deep-sea/" class="w-full h-96 rounded-lg shadow-xl"></iframe>
 
-  <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-    <h3 class="text-xl font-semibold mb-2">
-      <a href="https://www.robinsloan.com/notes/home-cooked-app/" class="text-blue-300 hover:text-blue-200 underline">BoopSnoop</a>
-    </h3>
-    <p class="text-lg">Video messaging app, just for Robin Sloan's family.</p>
-  </div>
-</div>
-
-<div class="mt-8 text-sm opacity-80">
-  There are others, but they're navel-gazy. Coding is odd in that the tools you use to do coding are made out of code. So some projects are things that only make sense once you've been coding for a while.
+<div style="display: none;">
+  <span v-click="0">0</span>
+  <span v-click="1">1</span>
 </div>
 
 ---
@@ -989,8 +977,10 @@ dragPos:
 square: 0,-5,0,0
 
 ---
+
 dragPos:
-  square: 0,-5,0,0
+square: 0,-5,0,0
+
 ---
 
 # Draggable Elements
@@ -1038,7 +1028,6 @@ src: ./pages/imported-slides.md
 hide: false
 
 ---
-
 
 ---
 
