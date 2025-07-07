@@ -1,7 +1,7 @@
 ---
 # You can also start simply with 'default'
 theme: seriph
-background: ./images/margarida-afonso-ahMCpXdUjv0-unsplash.jpg
+background: /images/margarida-afonso-ahMCpXdUjv0-unsplash.jpg
 # some information about your slides (markdown enabled)
 title: Software as Craft(ing)
 info: |

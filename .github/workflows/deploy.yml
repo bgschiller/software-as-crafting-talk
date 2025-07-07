@@ -47,7 +47,12 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: pnpm build --base /software-as-crafting-talk/
+        run: |
+          pnpm build --base /software-as-crafting-talk/
+          # I don't know why this image isn't picked up, but :shrug:
+          mkdir ./dist/images
+          # putting it in /images instead of /assets in order to match with local structure
+          cp ./images/margarida-afonso-ahMCpXdUjv0-unsplash.jpg ./dist/images/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
